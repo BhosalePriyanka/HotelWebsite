@@ -1,13 +1,16 @@
 import React from 'react';
 import location from '../Image/location.jpg';
 import Image from "react-bootstrap/Image";
+import { Col,Row} from 'react-bootstrap';
+
 
 function Home(){
 	return(
 	<>
 	<div className = "container text-center mt-5 p-5">
 <h1>About Us</h1>
-<div className="text-center">
+<div>
+ 
 <p> Since its inception in 1992, <strong> Hotel Nisarga </strong> has established an enviable reputation for refreshing hospitality, and personalized service.
 <br/>
 Its prime location & excellent business services make Hotel Nisarga the favorite among business travelers.
@@ -15,8 +18,11 @@ Its prime location & excellent business services make Hotel Nisarga the favorite
 Singularly committed to provide a touch of excellence & business ambience to its guests.</p>
 </div>
 
-<h3 className="text-center">Our Location</h3>
-<Image className="mx-auto d-block" style ={{height:250}}rounded src = {location}/>
+<h3>Our Location</h3>
+
+        <Image className="mx-auto d-block w-lg-100 img-fluid" style ={{height:250}}rounded src = {location}/>
+
+
 <p> Standing Majestically at Maharana Pratap Nagar <strong>Hotel Nisarga</strong> 
 is a land mark in bustling Commercial Centre of Bhopal. </p>
         <ul className = " text-start">

@@ -34,7 +34,7 @@
 
 
 /* Main Page */
-body{font-family:"Sans-serif";font-size:20px;
+body{font-family:"Sans-serif";
 background-size: cover; padding: 0;margin: 0;background-image: url(./Image/Image.jpg);}
 .menubar ul li {display:flex; justify-content: space-around;}
 .menubar ul li  a{text-decoration: none;}

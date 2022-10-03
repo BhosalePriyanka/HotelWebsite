@@ -5,41 +5,41 @@ import Validate from './Validate.js';
 
 
 
-function Reservation(){
+function Signup(){
 
 const [input,setInput] = useState({
         first_Name :'',
         last_Name : '',
         address : '',
         contact : '',
-        email_Id : '',
-        room_Type :'',
-        noof_Rooms : '',
-        date : '',
+        email : '',
+        password: '',
     });
 
 
 const[error,setError] = useState({});
 
-const[status,setStatus] = useState('');
  
 const handleInput = (event) => {
     event.preventDefault();
 setInput({...input , [event.target.name] : event.target.value});
 }
 
+
+
 const handleSubmit = async(event) => {
 event.preventDefault();
-setError(Validate(input));
+setError(Validate(input,true,false));
+
 
 /*JSON data get */
 const res = await fetch('http://localhost:3000/users');
 const jsonData = await res.json();
-const filterEmail = jsonData.filter( jsonData => { return jsonData.email_Id === input.email_Id });
+console.log(jsonData);
 
 
 /* JSON data post */
-if(error.isValid){
+if(error.isValid ){
 fetch('http://localhost:3000/users', {
 method : 'POST',
 headers: {
@@ -48,12 +48,21 @@ headers: {
 body : JSON.stringify(input),
 })
 .then(()=> {
-    alert("Account Created")
+    alert("Room Booked")
 })
  .then(() => { 
           })
+};
+
 }
-}
+
+  /* DELETE request using fetch with set headers
+useEffect(() => {
+    fetch('http://localhost:3000/users/41', {
+        method: 'DELETE'
+    }).then(() => alert("Deleted"));
+}, []);
+*/
 
 return(
 <>
@@ -85,40 +94,14 @@ return(
 
 <Form.Group>
 <Form.Label>  Email Id </Form.Label>  
-<Form.Control  type="email" name="email_Id"  value = {input.email_Id} onChange = {handleInput}/> 
-{error.email_Id && <p className ="text-danger"> {error.email_Id} </p>}
+<Form.Control  type="email" name="email"  value = {input.email_Id} onChange = {handleInput}/> 
+{error.email && <p className ="text-danger"> {error.email} </p>}
 </Form.Group>
 
 <Form.Group>
-<Form.Label> Room Type </Form.Label> 
-
-<Form.Control list="Room Type" name="room_Type" value = {input.room_Type} onChange = {handleInput}/> 
-<datalist id="Room Type">
-<option value="Single"/>
-<option value="Double"/>
-<option value="Extra Person"/>
-</datalist> 
-
-{error.room_Type && <p className ="text-danger"> {error.room_Type} </p>}
-</Form.Group>
-
-<Form.Group>
-<Form.Label> No of Rooms </Form.Label> 
-<Form.Control list="No of Rooms" name="noof_Rooms" value = {input.noof_Rooms} onChange = {handleInput}/> 
-<datalist id="No Of Rooms">
-<option value="1" />
-<option value="2" />
-<option value="3" />
-<option value="4" />
-<option value="5" />
-</datalist>
-{error.noof_Rooms && <p className ="text-danger"> {error.noof_Rooms} </p>}
-</Form.Group>
-
-<Form.Group>
- <Form.Label>  Date </Form.Label> 
-<Form.Control  type="date" name="date" value = {input.date} onChange = {handleInput} placeholder="DD-MM-YYYY"/> 
-{error.date && <p className ="text-danger"> {error.date} </p>}
+<Form.Label> Password </Form.Label>  
+<Form.Control  type="password" name="password"  value = {input.password} onChange = {handleInput}/> 
+{error.password && <p className ="text-danger"> {error.password} </p>}
 </Form.Group>
 
 <br/>
@@ -130,5 +113,5 @@ return(
 )
 }
 
-export default Reservation;
+export default Signup;
 

@@ -1,32 +1,43 @@
+import { clear } from '@testing-library/user-event/dist/clear';
 import React from 'react';
-import {Navbar , Container, Nav} from 'react-bootstrap';
+import {Navbar , Container, Nav,NavLink, NavDropdown} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Topnav(){
+  const userDetails= JSON.parse(localStorage.getItem('user'))
+  
+  const navigate = useNavigate(); 
+
+ const handleLogout = () =>{
+ localStorage.clear();
+
+ navigate(`/Login`)
+
+ }
+
 return(
 <>
 <Navbar bg="dark"  variant="dark" expand="lg" fixed="top" 
 className = "text-uppercase h5">
   <Container>
-    <Navbar.Toggle aria-controls="basic-navbar-nav "/>
-    <Navbar.Collapse id="basic-navbar-nav">
+  <Navbar.Toggle aria-controls="basic-navbar-nav "/>
+  <Navbar.Collapse id="basic-navbar-nav">
+  <Nav>
+  <NavLink as={Link} to = {`/Home`} className ="text-decoration-none mx-2">Home</NavLink>
+  <NavLink  as={Link} to = {`/Accommodation`}> Accommodation </NavLink>
+	<NavLink  as={Link} to = {`/Contactus`}> Contact Us </NavLink>
 
-      <Nav>
-        <Nav.Link> 
-        <Link to = {'/Home'} className ="text-decoration-none">Home</Link>
-        </Nav.Link>
 
-        <Nav.Link>
-        <Link to = {'/Accommodation'} className ="text-decoration-none"> Accommodation </Link>
-        </Nav.Link>
+  { userDetails
+  ? 
+  <NavDropdown title = {userDetails && userDetails.first_Name}> 
 
-		<Nav.Link>
-		<Link to = {'/Reservation'} className ="text-decoration-none"> Reservation</Link>
-		</Nav.Link>
-
-		<Nav.Link>
-		<Link to = {'/Contactus'} className ="text-decoration-none"> Contact Us </Link>
-		</Nav.Link>
+  <NavDropdown.Item onClick = {handleLogout}> Logout</NavDropdown.Item>
+  </NavDropdown>
+   :
+   <NavLink as={Link}  to = {`/Login`}> Login</NavLink> }
+}
 
 	  </Nav>
 	  </Navbar.Collapse>

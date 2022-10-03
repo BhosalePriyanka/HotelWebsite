@@ -1,82 +1,68 @@
 import React from 'react';
-import suite from '../Image/suite.jpg';
-import standard from '../Image/standard.jpg';
-import delux from  '../Image/delux.jpg';
 import room from "../Image/room.jpg";
+import Data from './Image.js';
 import {Link} from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Table from 'react-bootstrap/Table';
-import Image from "react-bootstrap/Image";
+import {Button, Row,Col,Table,Image} from "react-bootstrap";
+import { useState} from 'react';
+import { FcWiFiLogo } from "react-icons/fc";
+import { FaSwimmer} from "react-icons/fa";
 
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+
+
+
 function Accomodation() {
+
+
+	const [input,setInput] = useState({});
+	 
+	   
+	const handleInput = (event) => {
+	event.preventDefault();
+	setInput({...input , [event.target.name] : event.target.value});
+	  }
+	  
+	
+	const UserDetails = JSON.parse(localStorage.getItem('user'));
+	
+		
+	  
 return(
+
 <>
-	<div className = "container text-center mt-5 p-5">
+<div className = "container text-center mt-5 p-5">
 <h1> Accommodation </h1>
-<Image  src={room}  rounded className = "w-100" style ={{height:300}}/>
+<Image  src={room}  rounded className = "img-fluid m-5" style ={{height:300}}/>
+
 
 <p>
 We proudly offer you 43 centrally air conditioned, meticulously appointed, 
 elegantly furnished with modern fittings & amenities for the comfort & 
-convenience of both business travelers & individuals.
-</p>
-<Container>
-	<Row> 
-	<Col>
-	<Image rounded src = {suite}/>
-	<p>Suite</p>
+convenience of both business travelers & individuals.</p>
+<h4>Enjoy Wifi facitlity <FcWiFiLogo className='h1'/> <br/> and <br/> Swiming pool <FaSwimmer className='h1'/> </h4>
+
+
+
+
+<Row sm={12} className = "my-5"> 
+{ Data.map((data)=>
+	
+	<Col sm={4} key ={data.id}>
+	<br/>
+	<Image src={data.image} className='img-fluid' rounded />
+	<h4>{data.name}</h4>
+	<h5>Price: {data.price}£</h5>
+	
+	
+{UserDetails ?
+	<Button variant='dark'> <Link  state = {data} to  ={`/Profile`}>Book Now </Link> </Button>
+	:
+	<Button variant='dark'> <Link  to  ={`/Login`}>Book Now </Link> </Button>
+}
 	</Col> 
 
-	<Col>
-	<Image rounded src = {standard}/>
-	<p>Standard</p>
-	</Col>
-	
-	<Col>
-	<Image rounded src = {delux} />
-	<p>Delux</p>
-	</Col>
+)}
 	</Row>
-</Container>
 
-<Table  bordered variant = "dark">
-<thead>
-<tr>
-<th> Room Category</th>
-<th>Single Occupancy</th>
-<th>Double Occupancy</th>
-</tr>
-</thead>
-<tr>
-<td> Standrad </td>
-<td>Rs. 3350.00 </td>
-<td>Rs. 3850.00</td>
-</tr>
-
-<tr>
-<td>Deluxe</td>
-<td>Rs. 3750.00</td>
-<td>Rs. 4250.00</td>
-</tr>
-
-<tr>
-<td>Suite</td>
-<td>-</td>
-<td>Rs. 7550.00 </td>
-</tr>
-
-<tr>
-<td>Extra Person</td>
-<td>Rs. 600.00</td>
-<td>-</td>
-</tr>
-</Table>
-<br/>
-<p className="text-center"> <strong> Note : - </strong>(Taxes are applicable on Room Tariff) GST 18% Checkin Time - 12 Noon | Checkout Time - 10Am.</p>
-<p className="text-center"> <strong> Would you like to book room? <Link to = {`/Reservation`}> Book Now </Link> 
-</strong> </p>
 </div>
 </>
 );

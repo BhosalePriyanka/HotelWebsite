@@ -45,7 +45,7 @@ convenience of both business travelers & individuals.</p>
 
 <Row sm={12} className = "my-5"> 
 { Data.map((data)=>
-	
+
 	<Col sm={4} key ={data.id}>
 	<br/>
 	<Image src={data.image} className='img-fluid' rounded />
@@ -54,7 +54,7 @@ convenience of both business travelers & individuals.</p>
 	
 	
 {UserDetails ?
-	<Button variant='dark'> <Link  state = {data} to  ={`/Profile`}>Book Now </Link> </Button>
+	<Button variant='dark'> <Link  state = {data} to  = {`/Booking`}>Book Now </Link> </Button>
 	:
 	<Button variant='dark'> <Link  to  ={`/Login`}>Book Now </Link> </Button>
 }

@@ -31,17 +31,20 @@ const navigate = useNavigate();
 
       const userdetails = data.filter((data)=>{
       return data.email === input.email && data.password === input.password
-      })
+      });
+   
+      
     
       if(userdetails[0]){
       localStorage.setItem('user', JSON.stringify(userdetails[0]));
        navigate('/Accommodation');
        window.location.reload();
-      } else{
-      alert('Check Deatils.')
+      }
       
-      } 
-  }
+      else{
+        alert('Login failed, check incorrect details.')
+      }
+  } 
     
 
   return (

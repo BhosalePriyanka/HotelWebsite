@@ -8,6 +8,15 @@
       "email": "rani@gmail.com",
       "password": "111111",
       "id": 42
+    },
+    {
+      "first_Name": "Ganesh",
+      "last_Name": "Bhosale",
+      "address": "54 Cailhead Drive",
+      "contact": "1231231231",
+      "email": "ganesh@gmail.com",
+      "password": "123123",
+      "id": 43
     }
   ],
   "msgs": [
@@ -24,6 +33,30 @@
       "email": "priyanka.patil@gmail.com",
       "message": "ht",
       "id": 51
+    }
+  ],
+  "booking": [
+
+
+    {
+      "email": "rani@gmail.com",
+      "type": "Standard",
+      "adult": "2",
+      "child": "",
+      "dateto": "2022-10-07",
+      "datefrom": "2022-10-05",
+      "amount": 200,
+      "id": 3
+    },
+    {
+      "email": "rani@gmail.com",
+      "type": "Standard",
+      "adult": "1",
+      "child": "",
+      "dateto": "2022-10-04",
+      "datefrom": "2022-10-03",
+      "amount": 50,
+      "id": 4
     }
   ]
 }

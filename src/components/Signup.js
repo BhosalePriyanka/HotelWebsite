@@ -25,18 +25,14 @@ const handleInput = (event) => {
 setInput({...input , [event.target.name] : event.target.value});
 }
 
-
-
 const handleSubmit = async(event) => {
 event.preventDefault();
 setError(Validate(input,true,false));
-
 
 /*JSON data get */
 const res = await fetch('http://localhost:3000/users');
 const jsonData = await res.json();
 console.log(jsonData);
-
 
 /* JSON data post */
 if(error.isValid ){

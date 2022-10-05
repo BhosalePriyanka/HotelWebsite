@@ -4,6 +4,9 @@ import {Navbar , Container, Nav,NavLink, NavDropdown} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
+
+
+
 function Topnav(){
   const userDetails= JSON.parse(localStorage.getItem('user'))
   
@@ -11,7 +14,6 @@ function Topnav(){
 
  const handleLogout = () =>{
  localStorage.clear();
-
  navigate(`/Login`)
 
  }
@@ -31,9 +33,11 @@ className = "text-uppercase h5">
 
   { userDetails
   ? 
-  <NavDropdown title = {userDetails && userDetails.first_Name}> 
+<NavDropdown title = {userDetails && userDetails.first_Name}> 
 
-  <NavDropdown.Item onClick = {handleLogout}> Logout</NavDropdown.Item>
+<NavDropdown.Item as={Link}   to={`/Profile`}> Profile</NavDropdown.Item>
+
+<NavDropdown.Item onClick = {handleLogout}> Logout</NavDropdown.Item>
   </NavDropdown>
    :
    <NavLink as={Link}  to = {`/Login`}> Login</NavLink> }

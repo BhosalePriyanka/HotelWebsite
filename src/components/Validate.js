@@ -45,11 +45,12 @@ else if(!/^[A-Za-z\s]+$/.test(input.first_Name)){
 			isValid = false;
 		
 			}
-			if(!/^[A-Za-z\s]+$/.test(input.last_Name)){
-			error.last_Name = "Last name should letters only."
-			isValid = false;
+			else if(!/^[A-Za-z\s]+$/.test(input.last_Name)){
+				error.last_Name = "Last name should letters only."
+				isValid = false;
+				
+				};
 			
-			};
 			if(!input.address){
 			error.address = "Address required"
 			isValid = false;

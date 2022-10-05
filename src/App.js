@@ -7,7 +7,9 @@ import Contactus from './components/Contactus.js';
 import Accomodation from './components/Accomodation.js';
 import Signup from './components/Signup.js';
 import Login from './components/Login.js';
+import Booking from './components/Booking';
 import Profile from './components/Profile';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -25,6 +27,7 @@ function App() {
     <Route exact path = "/Accommodation" element = {<Accomodation/>} />
     <Route exact path = "/Signup" element = {<Signup/>} />
     <Route exact path = "/Login" element = {<Login/>} />
+    <Route exact path = "/Booking" element = {<Booking/>} />
     <Route exact path = "/Profile" element = {<Profile/>} />
     </Routes>
     </Router>

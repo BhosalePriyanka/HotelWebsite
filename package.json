@@ -1,6 +1,6 @@
 {
-  "name": "hotelbooking",
   "homepage": "http://BhosalePriyanka.github.io/HotelWebdite",
+  "name": "hotelbooking",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -118,13 +118,11 @@ return(
   <Form.Control  type="date" name="dateto" value = {input.dateto} onChange = {handleInput} placeholder="DD-MM-YYYY" className="text-center"/>
   </Col>
 </Row>
-          
-          
           <Form.Label className="fw-bold"> Amount</Form.Label>
 
           { location.state.name === "Standard"  ?
           <Form.Control readOnly  type="number" name="amount"  value = { input.amount = 50 * input.adult *  d }
-            onChange = {handleInput} className="text-center"  /> 
+            onChange = {handleInput} className="text-center"/> 
           : ''}
           { location.state.name === "Delux" ?
           <Form.Control  readOnly type="number" name="amount" value = { input.amount = 100 * input.adult * d} onChange = {handleInput} 

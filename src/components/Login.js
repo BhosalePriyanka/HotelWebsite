@@ -6,25 +6,20 @@ import Validate from './Validate.js';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-
-
-
 const Login = memo(() => {
   const[input,setInput] = useState({
     email: '',
     password:''
     })
 
-
-
 const[error , setError] =useState({})
 const navigate = useNavigate();
     
-  const hanldeChange = (event) => {
+const hanldeChange = (event) => {
       setInput({...input, [event.target.name]: event.target.value})
     }
     
-  const handleSubmit = async() =>{
+const handleSubmit = async() =>{
       setError(Validate(input,false,true,false));
       const res = await fetch('http://localhost:3000/users');
       const data = await res.json();
@@ -32,9 +27,7 @@ const navigate = useNavigate();
       const userdetails = data.filter((data)=>{
       return data.email === input.email && data.password === input.password
       });
-   
       
-    
       if(userdetails[0]){
       localStorage.setItem('user', JSON.stringify(userdetails[0]));
        navigate('/Accommodation');

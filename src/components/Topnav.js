@@ -23,7 +23,7 @@ return(
 <Navbar bg="dark"  variant="dark" expand="lg" fixed="top" 
 className = "text-uppercase h5">
   <Container>
-  <Navbar.Toggle aria-controls="basic-navbar-nav "/>
+  <Navbar.Toggle aria-controls="basic-navbar-nav"/>
   <Navbar.Collapse id="basic-navbar-nav">
   <Nav>
   <NavLink as={Link} to = {`/Home`} className ="text-decoration-none mx-2">Home</NavLink>

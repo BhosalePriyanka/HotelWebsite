@@ -39,7 +39,7 @@ const Profile = memo(() =>{
           { date > details.datefrom ?  
             <Row>
          <Col sm ={6} className="mx-auto">
-          <h1>Booking History</h1>
+          <h3>Booking History</h3>
     <Table striped bordered hover>
       <thead>
         <tr>
@@ -67,7 +67,7 @@ const Profile = memo(() =>{
          
         <Row>
          <Col sm ={6} className="mx-auto">
-         <h1>Upcoming Booking </h1>
+         <h3>Upcoming Booking </h3>
     <Table striped bordered hover>
       <thead>
         <tr>

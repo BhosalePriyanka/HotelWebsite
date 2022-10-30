@@ -2,6 +2,7 @@ import React from 'react';
 import {Form , Button} from 'react-bootstrap';
 import {useState , useEffect} from 'react';
 import Validate from './Validate.js';
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -19,7 +20,7 @@ const [input,setInput] = useState({
 
 const[error,setError] = useState({});
 
- 
+const navigate= useNavigate();
 const handleInput = (event) => {
     event.preventDefault();
 setInput({...input , [event.target.name] : event.target.value});
@@ -44,7 +45,8 @@ headers: {
 body : JSON.stringify(input),
 })
 .then(()=> {
-    alert("Room Booked")
+    alert("You are registed. Please sign up.")
+    navigate(`/Login`)
 })
  .then(() => { 
           })
@@ -63,7 +65,7 @@ useEffect(() => {
 return(
 <>
 <div className = "container text-center mt-5 p-5">
-<h1> Advance Booking </h1>
+<h1> Signup Form</h1>
 <Form className ="border border-dark col-lg-6 col-sm-12 p-5 mx-auto">
 
 <Form.Group>

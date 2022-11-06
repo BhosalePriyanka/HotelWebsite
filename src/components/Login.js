@@ -48,13 +48,13 @@ const handleSubmit = async() =>{
         <Form className ="border shadow  p-5 rounded">
             <Form.Group>
             <Form.Label> Email-Id</Form.Label>
-            <Form.Control input="email" name = "email" value={input.email} autoComplete="off" onChange={hanldeChange}/>
+            <Form.Control type="email" name = "email" value={input.email} autoComplete="off" onChange={hanldeChange}/>
             {error.email && <p className="text-danger">{error.email}</p>}
             </Form.Group>
 
             <Form.Group>
             <Form.Label> Password</Form.Label>
-            <Form.Control input="password" name="password" value={input.password} autoComplete="off"  onChange={hanldeChange}/>
+            <Form.Control type="password" name="password" value={input.password} autoComplete="off"  onChange={hanldeChange}/>
             {error.password && <p className="text-danger">{error.password}</p>}
             </Form.Group>
             <br/>

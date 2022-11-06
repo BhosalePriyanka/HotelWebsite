@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HotelWebsite/static/css/main.9d61d3c3.css",
-    "main.js": "/HotelWebsite/static/js/main.bc9600d5.js",
+    "main.js": "/HotelWebsite/static/js/main.34d5684f.js",
     "static/media/Image.jpg": "/HotelWebsite/static/media/Image.92d49b1fa3a0f8cfe51f.jpg",
     "static/media/room.jpg": "/HotelWebsite/static/media/room.f2664811ca62d1c05e9b.jpg",
     "static/media/location.jpg": "/HotelWebsite/static/media/location.c77f59141d99be4f4b30.jpg",
@@ -10,10 +10,10 @@
     "static/media/standard.jpg": "/HotelWebsite/static/media/standard.6554b7682d15a5567d15.jpg",
     "index.html": "/HotelWebsite/index.html",
     "main.9d61d3c3.css.map": "/HotelWebsite/static/css/main.9d61d3c3.css.map",
-    "main.bc9600d5.js.map": "/HotelWebsite/static/js/main.bc9600d5.js.map"
+    "main.34d5684f.js.map": "/HotelWebsite/static/js/main.34d5684f.js.map"
   },
   "entrypoints": [
     "static/css/main.9d61d3c3.css",
-    "static/js/main.bc9600d5.js"
+    "static/js/main.34d5684f.js"
   ]
 }

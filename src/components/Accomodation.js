@@ -31,7 +31,7 @@ return(
 <>
 <div className = "container text-center mt-5 p-5">
 <h1> Accommodation </h1>
-<Image  src={room}  rounded className = "img-fluid m-5" style ={{height:300}}/>
+<Image  src={room}  rounded className = "img-fluid" style ={{height:300}}/>
 
 
 <p>

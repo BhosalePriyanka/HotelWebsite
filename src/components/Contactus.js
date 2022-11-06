@@ -63,7 +63,7 @@ E-mail : info@hotelnisarga.com,  hotelnisarga@gmail.com <br/>
 
 <Row sm={6}>
 	<Col sm={6} className="mx-auto">
-	<Form className = "border border-dark p-5 rounded">
+	<Form className = "border shadow p-5 rounded">
 	<Form.Group>
 	<Form.Label> Name: </Form.Label>
 	<Form.Control type="text" name="name" value= {input.name} onChange={handleInput}/> 

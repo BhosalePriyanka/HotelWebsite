@@ -60,7 +60,7 @@ return(
 
 <Row sm={12}>
 <Col>
-<Form className ="border border-dark m-5 p-5 rounded">
+<Form className ="border shadow m-5 p-5 rounded">
   <Form.Group>
   <Form.Label className="fw-bold">Email Id</Form.Label>
   <Form.Control  readOnly type="emaild" name="email" value={input.email = userDetails.email} onChange={handleInput} className ="text-center"></Form.Control>

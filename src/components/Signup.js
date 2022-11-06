@@ -66,7 +66,7 @@ return(
 <>
 <div className = "container text-center mt-5 p-5">
 <h1> Signup Form</h1>
-<Form className ="border border-dark col-lg-6 col-sm-12 p-5 mx-auto">
+<Form className ="border shadow col-lg-6 col-sm-12 p-5 mx-auto">
 
 <Form.Group>
 <Form.Label> First Name </Form.Label> 

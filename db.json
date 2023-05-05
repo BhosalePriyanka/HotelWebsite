@@ -53,6 +53,15 @@
       "email": "prachi@gmail.com",
       "password": "L0ve56",
       "id": 47
+    },
+    {
+      "first_Name": "Sakshi",
+      "last_Name": "Patil",
+      "address": "Pune",
+      "contact": "9780896789",
+      "email": "sakshi@gmail.com",
+      "password": "123123",
+      "id": 48
     }
   ],
   "msgs": [

@@ -2,6 +2,7 @@ import React from 'react';
 import {Form , Button,Col,Row} from 'react-bootstrap';
 import { useState } from 'react';
 import Validate from './Validate.js';
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -16,6 +17,7 @@ message:'',
 });
 
 const[error,setError] = useState({});
+const navigate= useNavigate();
 
 const handleInput = (event ) => {
  setInput({...input,[event.target.name]: event.target.value});
@@ -25,11 +27,26 @@ const handleSubmit = async (event) =>{
 
 event.preventDefault();
 setError(Validate(input,false,false,false));
-if(error.isValid  ){
-	alert("Message Sent")
-	window.location.reload()
-}}
 
+//  JSON data post 
+
+if(error.isValid ){
+fetch('msgs', {
+method : 'POST',
+headers: {
+            "Content-Type" : "application/json",
+         },
+body : JSON.stringify(input),
+})
+.then(()=> {
+    alert("Message Sent.")
+    navigate(`/Home`)
+})
+ .then((error) => { 
+    console.log(error)
+          })
+};
+}
 
 
 

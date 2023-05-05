@@ -30,7 +30,7 @@ const handleSubmit = async() =>{
       if(userdetails[0]){
       localStorage.setItem('user', JSON.stringify(userdetails[0]));
        navigate('/Accommodation');
-      //  window.location.reload();
+      // window.location.reload();
       }
       
       else{

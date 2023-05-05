@@ -9,7 +9,6 @@ import Signup from './components/Signup.js';
 import Login from './components/Login.js';
 import Booking from './components/Booking';
 import Profile from './components/Profile';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

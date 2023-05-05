@@ -6,6 +6,7 @@ import Data from './Image.js';
 const Booking = ()=> {
     
     const location = useLocation();
+    console.log(location)
     const {image,name} = location.state;
     const userDetails =  JSON.parse(localStorage.getItem('user'));
     const [input,setInput] = useState({
@@ -23,7 +24,7 @@ const Booking = ()=> {
 
     }
     
-console.log(input)
+
 
 
 const handleClick = (event) => {

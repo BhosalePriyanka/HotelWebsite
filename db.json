@@ -44,6 +44,15 @@
       "email": "de@gmail.com",
       "password": "123456",
       "id": 46
+    },
+    {
+      "first_Name": "Prachi",
+      "last_Name": "Patil",
+      "address": "Pune",
+      "contact": "9780896789",
+      "email": "prachi@gmail.com",
+      "password": "L0ve56",
+      "id": 47
     }
   ],
   "msgs": [
@@ -132,6 +141,46 @@
       "datefrom": "2022-11-06",
       "amount": 100,
       "id": 9
+    },
+    {
+      "email": "rani@gmail.com",
+      "type": "Standard",
+      "adult": "2",
+      "child": "",
+      "dateto": "2022-11-17",
+      "datefrom": "2022-11-15",
+      "amount": 200,
+      "id": 10
+    },
+    {
+      "email": "rani@gmail.com",
+      "type": "Standard",
+      "adult": "2",
+      "child": "",
+      "dateto": "2022-12-21",
+      "datefrom": "2022-12-18",
+      "amount": 300,
+      "id": 11
+    },
+    {
+      "email": "rani@gmail.com",
+      "type": "Standard",
+      "adult": "1",
+      "child": "",
+      "dateto": "2022-12-31",
+      "datefrom": "2022-12-24",
+      "amount": 350,
+      "id": 12
+    },
+    {
+      "email": "prachi@gmail.com",
+      "type": "Delux",
+      "adult": "1",
+      "child": "1",
+      "dateto": "2023-03-30",
+      "datefrom": "2023-03-29",
+      "amount": 100,
+      "id": 13
     }
   ]
 }

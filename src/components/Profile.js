@@ -9,7 +9,7 @@ const Profile = memo(() =>{
     const userDetails =  JSON.parse(localStorage.getItem('user'));
 // Get data from booking
     const FetchData = async() =>{
-    const res = await fetch('http://localhost:3000/Booking');
+    const res = await fetch('https://hote-json.onrender.com/booking');
     const Data = await res.json();
     const bookingDetails = Data.filter((data)=>{return data.email === userDetails.email })
     setDetails(bookingDetails)

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Validate from './Validate.js';
 
 
+
+
 function Contactus(){
 
 const[input,setInput] = useState({
@@ -19,28 +21,17 @@ const handleInput = (event ) => {
  setInput({...input,[event.target.name]: event.target.value});
 }
 
-const handleSubmit = (event) =>{
+const handleSubmit = async (event) =>{
 
 event.preventDefault();
 setError(Validate(input,false,false,false));
-
-
-/* JSON post data*/
 if(error.isValid  ){
-fetch('http://localhost:3000/msgs', {
-method : 'POST',
-headers : {
-	"Content-Type": "application/json"
-		},
-body : JSON.stringify(input),
-})
-.then(() => {
-alert("Message Sent. Thank You!")
-})
-.then(() => {
-
-})
+	alert("Message Sent")
+	window.location.reload()
 }}
+
+
+
 
 return(
 <>
@@ -86,8 +77,8 @@ E-mail : info@hotelnisarga.com,  hotelnisarga@gmail.com <br/>
 	<Form.Label> Message: </Form.Label> 
 	<Form.Control as="textarea"  name="message" value={input.message} onChange={handleInput}/> 
 	{error.message && <p className="text-danger"> {error.message}</p>}
-	
 	</Form.Group>
+
 	<br/>
 	<Button type="submit" onClick={handleSubmit}>Submit</Button>
 	</Form>

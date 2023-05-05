@@ -31,13 +31,13 @@ event.preventDefault();
 setError(Validate(input,true,false));
 
 /*JSON data get */
-const res = await fetch('http://localhost:3000/users');
+const res = await fetch('https://hote-json.onrender.com/users');
 const jsonData = await res.json();
 console.log(jsonData);
 
 /* JSON data post */
 if(error.isValid ){
-fetch('http://localhost:3000/users', {
+fetch('https://hote-json.onrender.com/users', {
 method : 'POST',
 headers: {
             "Content-Type" : "application/json",
@@ -48,7 +48,8 @@ body : JSON.stringify(input),
     alert("You are registed. Please sign up.")
     navigate(`/Login`)
 })
- .then(() => { 
+ .then((error) => { 
+    console.log(error)
           })
 };
 
@@ -112,4 +113,5 @@ return(
 }
 
 export default Signup;
+
 

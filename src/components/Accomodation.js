@@ -12,16 +12,6 @@ import { FaSwimmer} from "react-icons/fa";
 
 function Accomodation() {
 
-
-	const [input,setInput] = useState({});
-	 
-	   
-	const handleInput = (event) => {
-	event.preventDefault();
-	setInput({...input , [event.target.name] : event.target.value});
-	  }
-	  
-	
 	const UserDetails = JSON.parse(localStorage.getItem('user'));
 	
 		

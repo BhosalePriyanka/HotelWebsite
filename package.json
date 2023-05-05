@@ -1,6 +1,5 @@
 {
-  
-  "name": "hotelbooking",
+  "proxy": "https://hote-json.onrender.com/"
   "version": "0.1.0",
   "private": true,
   "dependencies": {

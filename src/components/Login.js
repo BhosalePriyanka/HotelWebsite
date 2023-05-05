@@ -20,7 +20,7 @@ const hanldeChange = (event) => {
     
 const handleSubmit = async() =>{
       setError(Validate(input,false,true,false));
-      const res = await fetch('https://hote-json.onrender.com/users');
+      const res = await fetch('users');
       const data = await res.json();
 
       const userdetails = data.filter((data)=>{
@@ -30,7 +30,7 @@ const handleSubmit = async() =>{
       if(userdetails[0]){
       localStorage.setItem('user', JSON.stringify(userdetails[0]));
        navigate('/Accommodation');
-       window.location.reload();
+      //  window.location.reload();
       }
       
       else{

@@ -31,7 +31,7 @@ const handleClick = (event) => {
 
   event.preventDefault(event);
 
-fetch('http://localhost:3000/Booking',{
+fetch('Booking',{
   method: 'POST',
   headers: {
     "Content-Type" : "application/json",

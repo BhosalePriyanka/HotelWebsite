@@ -20,7 +20,7 @@ const hanldeChange = (event) => {
     
 const handleSubmit = async() =>{
       setError(Validate(input,false,true,false));
-      const res = await fetch('users');
+      const res = await fetch('https://hote-json.onrender.com/users');
       const data = await res.json();
 
       const userdetails = data.filter((data)=>{

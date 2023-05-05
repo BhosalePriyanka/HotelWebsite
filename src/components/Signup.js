@@ -31,13 +31,13 @@ event.preventDefault();
 setError(Validate(input,true,false));
 
 /*JSON data get */
-const res = await fetch('users');
+const res = await fetch('https://hote-json.onrender.com/users');
 const jsonData = await res.json();
 console.log(jsonData);
 
 /* JSON data post */
 if(error.isValid ){
-fetch('users', {
+fetch('https://hote-json.onrender.com/users', {
 method : 'POST',
 headers: {
             "Content-Type" : "application/json",

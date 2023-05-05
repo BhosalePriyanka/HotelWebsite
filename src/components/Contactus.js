@@ -31,7 +31,7 @@ setError(Validate(input,false,false,false));
 //  JSON data post 
 
 if(error.isValid ){
-fetch('msgs', {
+fetch('https://hote-json.onrender.com/msgs', {
 method : 'POST',
 headers: {
             "Content-Type" : "application/json",

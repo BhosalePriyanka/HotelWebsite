@@ -31,7 +31,7 @@ const handleClick = (event) => {
 
   event.preventDefault(event);
 
-fetch('Booking',{
+fetch('https://hote-json.onrender.com/Booking',{
   method: 'POST',
   headers: {
     "Content-Type" : "application/json",
